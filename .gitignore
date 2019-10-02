@@ -3,7 +3,7 @@
 
 # Whitelist
 !*.yaml
-!.gitignore
+#!.gitignore
 !/automations
 !configuration
 !/config
