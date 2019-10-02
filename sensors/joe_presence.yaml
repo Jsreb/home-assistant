@@ -1,0 +1,10 @@
+### WORK IN PROGRESS ###
+
+- platform: template
+  sensors:
+    joe_presence:
+      friendly_name: "Joe Presence"
+#    device_class: presence
+      value_template: >-
+        {{ states('sensor.time_online')|float < 3 or
+          is_state('binary_sensor.joe_presence_bayesian', 'on') }}

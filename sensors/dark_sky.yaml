@@ -1,0 +1,51 @@
+- platform: darksky
+  api_key: !secret dark_sky_api
+  latitude: !secret home_lat
+  longitude: !secret home_long
+  scan_interval:
+    days: 0
+    hours: 0
+    minutes: 2
+    seconds: 0
+  forecast:
+    - 0     # Today
+#    - 1     # Tomorrow
+#    - 2     # Day 3
+#    - 3     # Day 4
+#    - 4     # Day 5
+#    - 5     # Day 6
+#    - 6     # Day 7
+  monitored_conditions:
+    - alerts                 # Current severe weather advisories.
+#    - apparent_temperature_high
+#    - apparent_temperature_low
+    - apparent_temperature
+    - cloud_cover
+    - daily_summary          # Readable summary for the next week.
+#    - dew_point
+    - icon                   # Current weather conditions icon
+    - hourly_summary         # Readable summary for the next 2 days.
+#    - humidity               # Relative humidity.
+#    - minutely_summary       # Readable summary for the next hour.
+#    - moon_phase             # 0 = new moon, 0.25 = first quarter moon, 0.5 = full moon, 0.75 = last quarter moon.
+#    - nearest_storm_bearing  # Approximate direction of nearest storm in degrees.  True north = 0°.
+    - nearest_storm_distance # Approximate distance of nearest storm (in miles).
+#    - ozone
+#    - precip_accumulation
+#    - precip_intensity
+#    - precip_intensity_max
+#    - precip_probability
+    - precip_type           # Current Precipitation Type
+#    - pressure
+    - summary               # Readable summary.
+    - sunrise_time          # Sunrise time...obviously
+    - sunset_time           # Sunset time...obviously
+    - temperature           # Air temperature.
+    - temperature_high      # Daytime high temperature.
+    - temperature_low       # Overnight low temperature.
+#    - uv_index
+#    - visibility
+#    - wind_bearing
+#    - wind_gust
+    - wind_speed
+  

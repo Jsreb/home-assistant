@@ -1,0 +1,15 @@
+##- platform: flux
+##  name: Light Temperature
+#  start_time:
+#  stop_time:
+#  start_colortemp:
+#  sunset_colortemp:
+#  stop_colortemp:
+#  brightness: 100
+#  disable_brightness_adjust: true
+#  mode: xy
+##  transition: 30 #seconds
+##  interval: 30 #seconds
+##  lights:
+##    - light.front
+##    - light.hallway

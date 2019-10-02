@@ -1,0 +1,10 @@
+### WORK IN PROGRESS ###
+
+- platform: iphonedetect
+  consider_home: 60
+  new_device_defaults:
+    track_new_devices: true
+    hide_if_away: false
+  hosts:
+    hostname1: !secret joe_phone_ip
+#    hostname2: 

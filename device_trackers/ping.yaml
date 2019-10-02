@@ -1,0 +1,4 @@
+- platform: ping
+  hosts:
+    hostone: !secret joe_phone_ip
+  count: 5

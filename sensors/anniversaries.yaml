@@ -1,0 +1,10 @@
+- platform: anniversaries
+  name: Christmas
+  date: '1900-12-24'
+  icon_normal: mdi:calendar-clock
+  icon_today: mdi:pine-tree
+- platform: anniversaries
+  name: Joe Birthday
+  date: !secret birthday
+  icon_normal: mdi:calendar-clock
+  icon_today: mdi:cake

@@ -1,0 +1,44 @@
+- platform: command_line
+  switches:
+    # Toggles Roku TV
+    roku_tv_power:
+      command_on: 'curl -X POST http://10.0.30.100:8060/keypress/PowerOn'
+      command_off: 'curl -X POST http://10.0.30.100:8060/keypress/PowerOff'
+      command_state: 'curl -s GET http://10.0.30.100:8060/query/device-info | grep power-mode | sed -e "s:<power-mode>DisplayOff</power-mode>:OFF:" -e "s:<power-mode>PowerOn</power-mode>:ON:"'
+      value_template: '{{ value == "ON" }}'
+    roku_tv_netflix:
+      command_on: 'curl -X POST http://10.0.30.100:8060/launch/12'
+      value_template: '{{ value == "ON" }}'
+      command_off: 'curl -X POST http://10.0.30.100:8060/keypress/PowerOff'
+    roku_tv_hulu:
+      command_on: 'curl -X POST http://10.0.30.100:8060/launch/2285'
+      value_template: '{{ value == "ON" }}'
+      command_off: 'curl -X POST http://10.0.30.100:8060/keypress/PowerOff'
+    roku_tv_plex:
+      command_on: 'curl -X POST http://10.0.30.100:8060/launch/13535'
+      value_template: '{{ value == "ON" }}'
+      command_off: 'curl -X POST http://10.0.30.100:8060/keypress/PowerOff'
+    roku_tv_vudu:
+      command_on: 'curl -X POST http://10.0.30.100:8060/launch/13842'
+      value_template: '{{ value == "ON" }}'
+      command_off: 'curl -X POST http://10.0.30.100:8060/keypress/PowerOff'
+    roku_tv_hdhomerun:
+      command_on: 'curl -X POST http://10.0.30.100:8060/launch/297903'
+      value_template: '{{ value == "ON" }}'
+      command_off: 'curl -X POST http://10.0.30.100:8060/keypress/PowerOff'
+    roku_tv_youtube:
+      command_on: 'curl -X POST http://10.0.30.100:8060/launch/837'
+      value_template: '{{ value == "ON" }}'
+      command_off: 'curl -X POST http://10.0.30.100:8060/keypress/PowerOff'
+    roku_tv_primevideo:
+      command_on: 'curl -X POST http://10.0.30.100:8060/launch/13'
+      value_template: '{{ value == "ON" }}'
+      command_off: 'curl -X POST http://10.0.30.100:8060/keypress/PowerOff'
+    roku_tv_receiver:
+      command_on: 'curl -X POST http://10.0.30.100:8060/launch/tvinput.hdmi1'
+      value_template: '{{ value == "ON" }}'
+      command_off: 'curl -X POST http://10.0.30.100:8060/keypress/PowerOff'
+    roku_tv_spotify:
+      command_on: 'curl -X POST http://10.0.30.100:8060/launch/19977'
+      value_template: '{{ value == "ON" }}'
+      command_off: 'curl -X POST http://10.0.30.100:8060/keypress/PowerOff'

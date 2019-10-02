@@ -1,0 +1,26 @@
+##- platform: circadian_lighting
+##  min_brightness: 10
+##  max_brightness: 100
+##  disable_brightness_adjust: false
+#  sleep_entity: 
+#  sleep_state: 
+#  sleep_colortemp: 
+#  sleep_brightness: 
+#  disable_entity: 
+#  disable_state: 
+##  lights_ct:
+##    - light.bedroom
+##    - light.couch
+##    - light.hallway
+##    - light.front
+##    - light.desk
+#    - light.bedroom
+#  lights_rgb:
+#    - 
+#    - 
+#  lights_xy:
+#    - 
+#    - 
+#  lights_brightness: 
+#    - 
+#    - 

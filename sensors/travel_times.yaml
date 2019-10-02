@@ -1,0 +1,114 @@
+
+  
+# Home to Office
+- platform: waze_travel_time
+  origin: zone.home
+  destination: zone.office
+  name: "Home to Office"
+  region: 'US'
+  units: imperial
+  vehicle_type: car
+
+# Distance to Home (Live)
+- platform: waze_travel_time
+  origin: device_tracker.iphone
+  destination: zone.home
+  name: "Home"
+  region: 'US'
+  units: imperial
+  vehicle_type: car
+
+# Office to Home
+- platform: waze_travel_time
+  origin: zone.office
+  destination: zone.home
+  name: "Office to Home"
+  region: 'US'
+  units: imperial
+  vehicle_type: car
+  
+# Distance to Office (Live)
+- platform: waze_travel_time
+  origin: device_tracker.iphone
+  destination: zone.office
+  name: "Office"
+  region: 'US'
+  units: imperial
+  vehicle_type: car
+
+######################################################
+######################################################
+######################################################
+
+# "Home" to AMD
+- platform: waze_travel_time
+  origin: !secret gps_alex_apt_austin
+  destination: !secret gps_amd_austin
+  name: "AMD AM"
+  region: 'US'
+  units: imperial
+  vehicle_type: car
+
+# AMD to "Home"
+- platform: waze_travel_time
+  origin: !secret gps_amd_austin
+  destination: !secret gps_alex_apt_austin
+  name: "AMD PM"
+  region: 'US'
+  units: imperial
+  vehicle_type: car
+  
+# "Home" to Apple
+- platform: waze_travel_time
+  origin: !secret gps_alex_apt_austin
+  destination: !secret gps_apple_austin
+  name: "Apple AM"
+  region: 'US'
+  units: imperial
+  vehicle_type: car
+
+# Apple to "Home"
+- platform: waze_travel_time
+  origin: !secret gps_apple_austin
+  destination: !secret gps_alex_apt_austin
+  name: "Apple PM"
+  region: 'US'
+  units: imperial
+  vehicle_type: car
+
+# "Home" to Google
+- platform: waze_travel_time
+  origin: !secret gps_alex_apt_austin
+  destination: !secret gps_google_austin
+  name: "Google AM"
+  region: 'US'
+  units: imperial
+  vehicle_type: car
+
+# Google to "Home"
+- platform: waze_travel_time
+  origin: !secret gps_google_austin
+  destination: !secret gps_alex_apt_austin
+  name: "Google PM"
+  region: 'US'
+  units: imperial
+  vehicle_type: car
+
+# "Home" to Facebook
+- platform: waze_travel_time
+  origin: !secret gps_alex_apt_austin
+  destination: !secret gps_fb_1_austin
+  name: "Facebook AM"
+  region: 'US'
+  units: imperial
+  vehicle_type: car
+
+# Facebook to "Home"
+- platform: waze_travel_time
+  origin: !secret gps_fb_1_austin
+  destination: !secret gps_alex_apt_austin
+  name: "Facebook PM"
+  region: 'US'
+  units: imperial
+  vehicle_type: car
+

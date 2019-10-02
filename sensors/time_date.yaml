@@ -1,0 +1,127 @@
+- platform: time_date
+  display_options:
+    - 'time'
+    - 'date'
+    - 'date_time'
+#    - 'date_time_iso'
+    - 'time_date'
+#    - 'time_utc'
+    - 'beat'
+
+- platform: template
+  sensors:
+    time_dawn:
+      value_template: >-
+        {% set dawn = as_timestamp(states.sun.sun.attributes.next_dawn) %}
+        {{ dawn | timestamp_custom('%-H:%M')}}
+    time_sunrise:
+      value_template: >-
+        {% set sunrise = as_timestamp(states.sun.sun.attributes.next_rising) %}
+        {{ sunrise | timestamp_custom('%-H:%M')}}
+    time_solar_noon:
+      value_template: >-
+        {% set noon = as_timestamp(states.sun.sun.attributes.next_noon) %}
+        {{ noon | timestamp_custom('%-H:%M')}}
+    time_sunset:
+      value_template: >-
+        {% set sunset = as_timestamp(states.sun.sun.attributes.next_setting) %}
+        {{ sunset | timestamp_custom('%-H:%M')}}
+    time_dusk:
+      value_template: >-
+        {% set dusk = as_timestamp(states.sun.sun.attributes.next_dusk) %}
+        {{ dusk | timestamp_custom('%-H:%M')}}
+    time_solar_midnight:
+      value_template: >-
+        {% set midnight = as_timestamp(states.sun.sun.attributes.next_midnight) %}
+        {{ midnight | timestamp_custom('%-H:%M')}}
+    time_dayoftheweek:
+      value_template: "{{ ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'][now().weekday()] }}"
+      entity_id: sensor.time
+    time_month:
+      value_template: "{{ ['January','February','March','April','May','June','July','August','September','October','November','December'][now().month-1] }}"
+      entity_id: sensor.time
+    time_dayofthemonth:
+      value_template: "{{ ['1st','2nd','3rd','4th','5th','6th','7th','8th','9th','10th','11th','12th','13th','14th','15th','16th','17th','18th','19th','20th','21th','22th','23th','24th','25th','26th','27th','28th','29th','30th','31th' ][ now().day-1] }}"
+    time_of_day:
+      value_template: >-
+        {% set time = strptime(states.sensor.time.state,'%H:%M') %}
+        {% set Time = ( time.hour + time.minute / 60 ) %}
+        {% set sunrise = strptime(states.sensor.time_sunrise.state,'%H:%M') %}
+        {% set Sunrise = ( sunrise.hour + sunrise.minute / 60 ) %}
+        {% set sunset = strptime(states.sensor.time_sunset.state,'%H:%M') %}
+        {% set Sunset = ( sunset.hour + sunset.minute / 60 ) %}
+        {% if (Sunrise - 1) < Time < (Sunrise + 1) %}
+          Morning
+        {% elif (Sunrise + 1) <= Time <= (Sunset -1) %}
+          Afternoon
+        {% elif (Sunset - 1) < Time < (Sunset + 1) %}
+          Evening
+        {% elif (Sunset + 1) < Time < (Sunrise - 1) %}
+          Night
+        {% endif %}
+
+      
+      
+      
+      
+      
+      
+      
+#### ALTERNATIVE ####
+#      value_template: >-
+#        {% set O = 1800 %}
+#        {% set o = O | timestamp_custom('%H:%M') %}
+#        {% set A = as_timestamp(states.sensor.time.last_changed) %}
+#        {% set a = A | timestamp_custom('%H:%M') %}
+#        {% set B = as_timestamp(states.sun.sun.attributes.next_dawn) %}
+#        {% set b = B | timestamp_custom('%H:%M') %}
+#        {% set C = B - O %}
+#        {% set c = C | timestamp_custom('%H:%M') %}
+#        {% set D = B + O %}
+#        {% set d = D | timestamp_custom('%H:%M') %}
+#        {% set E = as_timestamp(states.sun.sun.attributes.next_dusk) %}
+#        {% set e = E | timestamp_custom('%H:%M') %}
+#        {% set F = E - O %}
+#        {% set f = F | timestamp_custom('%H:%M') %}
+#        {% set G = E + O %}
+#        {% set g = G | timestamp_custom('%H:%M') %}
+#        {% if c < a < d %}
+#          Morning
+#        {% elif f < a < g %}
+#          Evening
+#        {% elif d <= a <= f %}
+#          Afternoon
+#        {% else %}
+#          Night
+#        {% endif %}
+
+#### ALTERNATIVE ####
+#    time_of_day:
+#      value_template: >-
+#        {% set current_time = as_timestamp(states.sensor.time.last_changed) %}
+#        {% set offset = 1800 %}
+#        {% set dawn = as_timestamp(states.sun.sun.attributes.next_dawn) %}
+#        {% set dusk = as_timestamp(states.sun.sun.attributes.next_dusk) %}
+#        {% if time > dusk + offset}
+#          Night
+#        {% elif time < dawn - offset}
+#          Night
+#        {% elif dawn - offset <= time <= dawn + offset %}
+#          Morning
+#        {% elif dusk - offset <= time <= dusk + offset %}
+#          Evening
+#        {% else %}
+#          Day
+#        {% endif %}
+        
+
+
+
+
+
+
+
+
+
+
+

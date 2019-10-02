@@ -3,15 +3,20 @@
 
 # Whitelist
 !*.yaml
-#!.gitignore
+!/appdaemon
 !/automations
 !configuration
 !/config
+!/custom_components
+!/device_trackers
 !/scripts
+!/sensors
+!/switches
 !/themes
 
 # Blacklist
 .cloud
+.gitignore
 .google.token
 .ios.conf
 .jsrebernak_gmail_com.tile.conf
@@ -23,11 +28,11 @@
 *.conf
 *.log
 
-appdaemon
 icloud
 www
 
 aircast.xml
+customie.yaml
 input_select.yaml
 google_calendars.yaml
 groups.yaml

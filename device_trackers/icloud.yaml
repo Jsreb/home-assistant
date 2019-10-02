@@ -1,0 +1,8 @@
+### WORK IN PROGRESS ###
+
+#- platform: icloud
+#  username: !secret email_1
+#  password: !secret pw_2
+#  account_name: Joe iCloud
+#  max_interval: 10
+#  gps_accuracy_threshold: 20
