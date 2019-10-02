@@ -1,0 +1,3 @@
+themes: 
+  day: !include ./themes/themes.yaml
+#  night: 

@@ -1,0 +1,4 @@
+base_url: !secret http_url
+ssl_certificate: !secret http_certificate
+ssl_key: !secret http_key
+server_port: !secret http_port

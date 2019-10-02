@@ -1,0 +1,10 @@
+- alias: Roku TV Off
+  id: 'roku_tv_off'
+  initial_state: true
+  trigger:
+    platform: state
+    entity_id:  media_player.living_room_tv
+    to: 'off'
+  action:
+    service: switch.turn_off
+    entity_id: group.roku_tv

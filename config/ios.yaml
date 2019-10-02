@@ -1,0 +1,30 @@
+push:
+  categories:
+    - name: Lights
+      identifier: 'lights'
+      actions:
+        - identifier: 'turn_off'
+          title: 'Turn Off Lights'
+          activationMode: 'background'
+          authenticationRequired: false
+          destructive: true
+          behavior: 'default'
+        - identifier: 'turn_on'
+          title: 'Turn On Lights'
+          activationMode: 'background'
+          authenticationRequired: false
+          destructive: true
+          behavior: 'default'
+    - name: Security
+      identifier: 'security'
+      actions:
+        - identifier: 'blink_lights'
+          title: 'Blink Lights'
+          activationMode: 'background'
+          authenticationRequired: false
+          destructive: true
+        - identifier: 'broadcast_message'
+          title: 'Broadcast Message'
+          activationMode: 'background'
+          authenticationRequired: false
+          destructive: true

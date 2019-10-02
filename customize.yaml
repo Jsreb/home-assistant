@@ -1,0 +1,11 @@
+zone.office:
+  hidden: true
+  icon: mdi:office-building
+zone.beach:
+  icon: mdi:beach
+zone.dads_house:
+  icon: mdi:home-heart
+zone.moms_house:
+  icon: mdi:home-heart
+person.joe:
+  entity_picture: /local/pictures/Joe.jpg

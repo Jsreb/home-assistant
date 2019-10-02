@@ -1,0 +1,73 @@
+
+
+
+##########################################
+############### ROKU TV ##################
+##########################################
+roku_hulu:
+  sequence:
+    - service: media_player.select_source
+      entity_id: media_player.living_room_tv      
+      data:
+        source: Hulu
+      
+roku_netflix:
+  sequence:
+    - service: media_player.select_source
+      entity_id: media_player.living_room_tv
+      data:
+        source: Netflix
+      
+roku_hbo_now:
+  sequence:
+    - service: media_player.select_source
+      entity_id: media_player.living_room_tv
+      data:
+        source: HBO NOW      
+
+roku_plex:
+  sequence:
+    - service: media_player.select_source
+      entity_id: media_player.living_room_tv
+      data:
+        source: Plex   
+  
+roku_on:
+  sequence:
+    - service: shell_command.roku_on
+roku_off:
+  sequence:
+    - service: shell_command.roku_off
+roku_volume_up:
+  sequence:
+    - service: shell_command.roku_volume_up
+roku_volume_down:
+  sequence:
+    - service: shell_command.roku_volume_down
+roku_home:
+  sequence:
+    - service: shell_command.roku_home
+roku_reverse:
+  sequence:
+    - service: shell_command.roku_reverse
+roku_select:
+  sequence:
+    - service: shell_command.roku_select
+roku_left:
+  sequence:
+    - service: shell_command.roku_left
+roku_right:
+  sequence:
+    - service: shell_command.roku_right
+roku_down: 
+  sequence:
+    - service: shell_command.roku_down
+roku_up: 
+  sequence:
+    - service: shell_command.roku_up
+roku_back: 
+  sequence:
+    - service: shell_command.roku_back
+roku_info: 
+  sequence:
+    - service: shell_command.roku_info

@@ -1,0 +1,38 @@
+# Blacklist everything by default
+*
+
+# Whitelist
+!*.yaml
+!.gitignore
+!/automations
+!configuration
+!/config
+!/scripts
+!/themes
+
+# Blacklist
+.cloud
+.google.token
+.ios.conf
+.jsrebernak_gmail_com.tile.conf
+.storage
+.spotify-token-cache
+.uuid
+
+*.bak
+*.conf
+*.log
+
+appdaemon
+icloud
+www
+
+aircast.xml
+input_select.yaml
+google_calendars.yaml
+groups.yaml
+ip_bans.yaml
+known_devices.yaml
+secrets.yaml
+ui-lovelace.yaml
+zones.yaml

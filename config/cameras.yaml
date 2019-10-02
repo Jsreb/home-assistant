@@ -1,0 +1,9 @@
+- platform: generic
+  name: Weather Radar 1
+  still_image_url: !secret radar_1
+- platform: generic
+  name: Weather Radar 2
+  still_image_url: !secret radar_2
+- platform: generic
+  name: Weather Radar 3
+  still_image_url: !secret radar_3

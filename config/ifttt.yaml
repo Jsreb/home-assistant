@@ -1,0 +1,3 @@
+# See "https://www.home-assistant.io/components/ifttt/" for more information
+
+key: !secret ifttt

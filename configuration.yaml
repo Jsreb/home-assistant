@@ -1,0 +1,48 @@
+automation: !include_dir_merge_list automations
+binary_sensor: !include_dir_merge_list ./config/binary_sensors
+camera: !include ./config/cameras.yaml
+circadian_lighting: !include ./config/circadian_lighting.yaml
+config:
+#default_config:        # Broken out into it's individual components
+device_tracker: !include_dir_merge_list device_trackers
+discovery: !include ./config/discovery.yaml
+frontend:
+  themes: !include ./themes/themes.yaml
+google: !include ./config/google.yaml
+google_assistant: !include ./config/google_assistant.yaml
+group: !include ./config/groups.yaml
+hacs: !include ./config/hacs.yaml
+history:
+homeassistant:
+  customize: !include customize.yaml
+http: !include ./config/http.yaml
+ifttt: !include ./config/ifttt.yaml
+input_boolean: !include ./config/input_boolean.yaml
+input_select: !include ./config/input_select.yaml
+ios: !include ./config/ios.yaml
+logbook: !include ./config/logbook.yaml
+logger: !include ./config/logger.yaml
+#map        # Not used
+media_player: !include ./config/media_player.yaml
+mobile_app:
+#mqtt: !include ./config/mqtt.yaml
+person: !include ./config/people.yaml
+pi_hole: !include ./config/pihole.yaml
+plex: !include ./config/plex.yaml
+recorder: !include ./config/recorder.yaml
+remote: !include ./config/remote.yaml
+scene: !include_dir_merge_list ./config/scenes
+script: !include_dir_merge_named scripts
+sensor: !include_dir_merge_list sensors
+shell_command: !include ./config/shell_commands.yaml
+speedtestdotnet: !include ./config/speedtest.yaml
+ssdp:
+sun:
+switch: !include_dir_merge_list switches
+system_health:
+tts: !include ./config/tts.yaml
+updater:
+wake_on_lan:
+weather: !include ./config/weather.yaml
+zeroconf:
+zone: !include ./config/zones.yaml

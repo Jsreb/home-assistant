@@ -1,0 +1,13 @@
+# Adjust light color temperature and brightness to outside lighting conditions / time of day
+
+min_colortemp: 2500
+max_colortemp: 5500
+#sunrise_offset:
+#sunset_offset:
+#sunrise_time:
+#sunset_time:
+#latitude: 
+#longitude: 
+#elevation: 
+interval: 300
+#transition:

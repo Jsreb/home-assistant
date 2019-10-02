@@ -1,0 +1,21 @@
+### WORK IN PROGRESS ###
+- alias: "Leave for work"
+  trigger: 
+    platform: template
+    value_template: >
+      {% if 5 <= strptime(states.sensor.time.state,'%I:%M').hour <= 7 %}
+        {{ ( now().hour + now().minute / 60 ) > ( 7.00 - states.sensor.home_to_office.state | int / 60) }}
+      {% else %}
+        False
+      {% endif %}
+  condition:
+  - condition: state
+    entity_id: binary_sensor.work_day
+    state: 'on'
+  action:
+  - service: notify.ios_iphone
+    data:
+      message: "You have 10 minutes to leave if you want to be to work by 7:00am"
+      title: "Time to Leave for Work"
+
+

@@ -1,0 +1,19 @@
+# Integrate Home Assistant with Google Assistant
+
+project_id: !secret ga_project
+api_key: !secret ga_key
+exposed_domains:
+#  - camera
+  - climate
+  - cover
+#  - fan
+#  - group
+  - input_boolean
+#  - light
+#  - lock
+  - media_player
+  - sensor
+  - scene
+  - script
+  - switch
+#  - vacuum

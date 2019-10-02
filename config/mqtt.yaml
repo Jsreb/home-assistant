@@ -1,0 +1,5 @@
+### WORK IN PROGRESS ###
+Broker: !secret hassio_ip
+Port: !secret mqtt_port
+Username: !secret mqtt_user
+Password: !secret mqtt_pw

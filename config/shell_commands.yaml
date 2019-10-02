@@ -1,0 +1,15 @@
+# Controls for Roku TV
+
+roku_on: 'curl -X POST http://10.0.30.100:8060/keypress/PowerOn'
+roku_off: 'curl -X POST http://10.0.30.100:8060/keypress/PowerOff'
+roku_volume_up: 'curl -X POST http://10.0.30.100:8060/keypress/VolumeUp'
+roku_volume_down: 'curl -X POST http://10.0.30.100:8060/keypress/VolumeDown'
+roku_home: 'curl -X POST http://10.0.30.100:8060/keypress/Home'
+roku_reverse: 'curl -X POST http://10.0.30.100:8060/keypress/Rev'
+roku_select: 'curl -X POST http://10.0.30.100:8060/keypress/Select'
+roku_left: 'curl -X POST http://10.0.30.100:8060/keypress/Left'
+roku_right: 'curl -X POST http://10.0.30.100:8060/keypress/Right'
+roku_down: 'curl -X POST http://10.0.30.100:8060/keypress/Down'
+roku_up: 'curl -X POST http://10.0.30.100:8060/keypress/Up'
+roku_back: 'curl -X POST http://10.0.30.100:8060/keypress/Back'
+roku_info: 'curl -X POST http://10.0.30.100:8060/keypress/Info'

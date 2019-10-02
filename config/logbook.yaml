@@ -1,0 +1,13 @@
+exclude:
+  domains:
+    - automation
+    - script
+    - weblink
+    - updater
+  entities:
+    - sensor.date
+    - sensor.date_time
+    - sensor.internet_time
+    - sensor.time
+    - sensor.time_date
+    - sun.sun
