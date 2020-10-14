@@ -1,48 +1,108 @@
-automation: !include_dir_merge_list automations
+#
+#   ___             __ _                       _   _
+#  / __ ___  _ __  / _(_) __ _ _   _ _ __ __ _| |_(_) ___  _ __
+# | /  / _ \| '_ \| |_| |/ _` | | | | '__/ _` | __| |/ _ \| '_ \
+# | \_| (_) | | | |  _| | (_| | |_| | | | (_| | |_| | (_) | | | |
+#  \___\___/|_| |_|_| |_|\__, |\__,_|_|  \__,_|\__|_|\___/|_| |_|
+#                        |___/
+#
+# https://github.com/Jsreb/home-assistant
+
+########################################
+########## Core Configuration ##########
+########################################
+config:
+discovery: !include ./config/discovery.yaml
+frontend:
+  themes: !include ./config/themes/themes.yaml
+homeassistant:
+  customize: !include ./config/customize.yaml
+http: !include ./config/http.yaml
+ssdp:
+system_health:
+tts: !include ./config/tts.yaml
+updater:
+zeroconf:
+
+########################################
+################ Inputs ################
+########################################
+input_boolean: !include ./config/input_boolean.yaml
+input_datetime: !include ./config/input_datetimes.yaml
+input_number: !include_dir_merge_list ./config/input_number
+input_select: !include ./config/input_select/input_select.yaml
+
+########################################
+########## Logging & History ###########
+########################################
+device_tracker: !include_dir_merge_list ./config/device_trackers
+history:
+logger: !include ./config/logger.yaml
+
+########################################
+############ Managed Via UI ############
+########################################
+automation: !include_dir_merge_list ./config/automations
+person: 
+scene: !include_dir_merge_list ./config/scenes
+script: !include_dir_merge_named ./config/scripts
+
+########################################
+################ Other #################
+########################################
+amcrest: !include ./config/amcrest.yaml
+api:
+badnest:
+  issue_token: !secret nest_issue_token
+  cookie: !secret nest_cookie
+  api_key : !secret nest_api_key
 binary_sensor: !include_dir_merge_list ./config/binary_sensors
 camera: !include ./config/cameras.yaml
 circadian_lighting: !include ./config/circadian_lighting.yaml
-config:
-#default_config:        # Broken out into it's individual components
-device_tracker: !include_dir_merge_list device_trackers
-discovery: !include ./config/discovery.yaml
-frontend:
-  themes: !include ./themes/themes.yaml
+climate: !include ./config/climate.yaml
+emulated_roku:
+  servers:
+    - name: Home Assistant
+      listen_port: 8060
 google: !include ./config/google.yaml
 google_assistant: !include ./config/google_assistant.yaml
 group: !include ./config/groups.yaml
 hacs: !include ./config/hacs.yaml
-history:
-homeassistant:
-  customize: !include customize.yaml
-http: !include ./config/http.yaml
+homekit: !include ./config/homekit.yaml
 ifttt: !include ./config/ifttt.yaml
-input_boolean: !include ./config/input_boolean.yaml
-input_select: !include ./config/input_select.yaml
+influxdb: #!include ./config/influxdb.yaml
+  host: 10.0.30.200
+  port: !secret influxdb_port
+  database: !secret influxdb_database
+  username: !secret influxdb_username
+  password: !secret pw_7
+  max_retries: 3
+  default_measurement: state
+  ssl: true
+  verify_ssl: true
 ios: !include ./config/ios.yaml
-logbook: !include ./config/logbook.yaml
-logger: !include ./config/logger.yaml
-#map        # Not used
+light: !include ./config/light.yaml
 media_player: !include ./config/media_player.yaml
 mobile_app:
-#mqtt: !include ./config/mqtt.yaml
-person: !include ./config/people.yaml
-pi_hole: !include ./config/pihole.yaml
-plex: !include ./config/plex.yaml
-recorder: !include ./config/recorder.yaml
+mqtt: !include ./config/mqtt.yaml
+python_script:
 remote: !include ./config/remote.yaml
-scene: !include_dir_merge_list ./config/scenes
-script: !include_dir_merge_named scripts
-sensor: !include_dir_merge_list sensors
-shell_command: !include ./config/shell_commands.yaml
+rest_command: !include_dir_merge_list ./config/rest_commands
+sensor: !include_dir_merge_list ./config/sensors
+shell_command: !include_dir_merge_list ./config/shell_commands
 speedtestdotnet: !include ./config/speedtest.yaml
-ssdp:
+spotcast: !include ./config/spotcast.yaml
+spotify: !include ./config/spotify.yaml
 sun:
-switch: !include_dir_merge_list switches
-system_health:
-tts: !include ./config/tts.yaml
-updater:
-wake_on_lan:
+switch: !include_dir_merge_list ./config/switches
+utility_meter: !include ./config/utility_meter.yaml
+var: !include ./config/variables.yaml
+#wake_on_lan:
 weather: !include ./config/weather.yaml
-zeroconf:
-zone: !include ./config/zones.yaml
+wemo: !include ./config/wemo.yaml
+
+########################################
+########## Custom Components ###########
+########################################
+pyscript: !include ./config/pyscript.yaml
+adaptive_lighting: !include ./config/adaptive_lighting.yaml
